@@ -75,9 +75,6 @@ public class UnitMultiplication {
         Job job = Job.getInstance(conf);
         job.setJarByClass(UnitMultiplication.class);
 
-        ChainMapper.addMapper(job, TransitionMapper.class, Object.class, Text.class, Text.class, Text.class, conf);
-        ChainMapper.addMapper(job, PRMapper.class, Object.class, Text.class, Text.class, Text.class, conf);
-
         job.setReducerClass(MultiplicationReducer.class);
 
         job.setOutputKeyClass(Text.class);
